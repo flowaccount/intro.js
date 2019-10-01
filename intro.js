@@ -67,15 +67,15 @@ function IntroJs(obj) {
     /* Close introduction when clicking on overlay layer? */
     exitOnOverlayClick: true,
     /* Show step numbers in introduction? */
-    showStepNumbers: true,
+    showStepNumbers: false,
     /* Let user use keyboard to navigate the tour? */
     keyboardNavigation: true,
     /* Show tour control buttons? */
     showButtons: true,
     /* Show tour bullets? */
-    showBullets: true,
+    showBullets: false,
     /* Show tour progress? */
-    showProgress: false,
+    showProgress: true,
     /* Scroll to highlighted element? */
     scrollToElement: true,
     /*
@@ -87,13 +87,13 @@ function IntroJs(obj) {
     /* Padding to add after scrolling when element is not in the viewport (in pixels) */
     scrollPadding: 30,
     /* Set the overlay opacity */
-    overlayOpacity: 0.8,
+    overlayOpacity: 0.6,
     /* Precedence of positions, when auto is enabled */
     positionPrecedence: ["bottom", "top", "right", "left"],
     /* Disable an interaction with element? */
     disableInteraction: false,
     /* Set how much padding to be used around helper element */
-    helperElementPadding: 10,
+    helperElementPadding: 0,
     /* Default hint position */
     hintPosition: 'top-middle',
     /* Hint button label */
@@ -1223,7 +1223,7 @@ function _showElement(targetElement) {
     }
 
     tooltipLayer.className = 'introjs-tooltip';
-    if (this._option.progressPosition == 'top') {
+    if (this._options.progressPosition == 'top') {
       tooltipLayer.appendChild(progressLayer);
       tooltipLayer.appendChild(tooltipTextLayer);
       tooltipLayer.appendChild(bulletsLayer);
