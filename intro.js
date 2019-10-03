@@ -982,7 +982,6 @@ function _setHelperLayerPosition(helperLayer) {
  */
 function _disableInteraction() {
   var disableInteractionLayer = document.querySelector('.introjs-disableInteraction');
-
   if (disableInteractionLayer === null) {
     disableInteractionLayer = document.createElement('div');
     disableInteractionLayer.className = 'introjs-disableInteraction';
@@ -990,6 +989,34 @@ function _disableInteraction() {
   }
 
   _setHelperLayerPosition.call(this, disableInteractionLayer);
+  // custom for animate introjs-nextbutton & introjs-donebutton
+  disableInteractionLayer.addEventListener("click", function(){
+    var nextbtn = document.getElementsByClassName("introjs-nextbutton")[0];
+    var donebtn = document.getElementsByClassName("introjs-donebutton")[0];
+    addClassAnimateBtn(nextbtn);
+    addClassAnimateBtn(donebtn);
+  });
+}
+
+/**
+ * For animate introjs-nextbutton & introjs-donebutton
+ *
+ * @api private
+ * @method addClassAnimateBtn
+ * @param {Object} btnElement
+ */
+function addClassAnimateBtn(btnElement){
+  if(!btnElement.classList.contains('animate')){
+    if(btnElement.classList.contains('animate2')){
+      btnElement.classList.remove('animate2');
+    }
+    btnElement.classList.add('animate');
+  }else{
+    btnElement.classList.remove('animate');
+    if(!btnElement.classList.contains('animate2')){
+      btnElement.classList.add('animate2');
+    }
+  }
 }
 
 /**
@@ -1797,7 +1824,7 @@ function _addOverlayLayer(targetElm) {
     }
   }
   
-  var overlayLayers = targetElement.querySelectorAll('.introjs-overlay');
+  var overlayLayers = targetElm.querySelectorAll('.introjs-overlay');
   if (!overlayLayers || overlayLayers.length === 0) {
     targetElm.appendChild(overlayLayer);
   }
