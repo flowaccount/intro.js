@@ -1796,8 +1796,11 @@ function _addOverlayLayer(targetElm) {
       overlayLayer.style.cssText = styleText;
     }
   }
-
-  targetElm.appendChild(overlayLayer);
+  
+  var overlayLayers = targetElement.querySelectorAll('.introjs-overlay');
+  if (!overlayLayers || overlayLayers.length === 0) {
+    targetElm.appendChild(overlayLayer);
+  }
 
   overlayLayer.onclick = function() {
     if (self._options.exitOnOverlayClick === true) {
