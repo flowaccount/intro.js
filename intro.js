@@ -993,8 +993,8 @@ function _disableInteraction() {
   disableInteractionLayer.addEventListener("click", function(){
     var nextbtn = document.getElementsByClassName("introjs-nextbutton")[0];
     var donebtn = document.getElementsByClassName("introjs-donebutton")[0];
-    addClassAnimateBtn(nextbtn);
-    addClassAnimateBtn(donebtn);
+    if(nextbtn !== undefined) addClassAnimateBtn(nextbtn);
+    if(donebtn !== undefined) addClassAnimateBtn(donebtn);
   });
 }
 
