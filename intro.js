@@ -1,5 +1,5 @@
 /**
- * Intro.js v2.9.3
+ * Intro.js v2.9.6
  * https://github.com/usablica/intro.js
  *
  * Copyright (C) 2017 Afshin Mehrabani (@afshinmeh)
@@ -32,7 +32,7 @@
   }
 })(function () {
 //Default config/variables
-var VERSION = '2.9.3';
+var VERSION = '2.9.6';
 
 /**
  * IntroJs main class
@@ -87,7 +87,7 @@ function IntroJs(obj) {
     /* Padding to add after scrolling when element is not in the viewport (in pixels) */
     scrollPadding: 30,
     /* Set the overlay opacity */
-    overlayOpacity: 0.6,
+    overlayOpacity: 0.4,
     /* Precedence of positions, when auto is enabled */
     positionPrecedence: ["bottom", "top", "right", "left"],
     /* Disable an interaction with element? */
@@ -1250,7 +1250,7 @@ function _showElement(targetElement) {
     }
 
     tooltipLayer.className = 'introjs-tooltip';
-    if (this._options.progressPosition == 'top') {
+    if (this._options.progressPosition === 'top') {
       tooltipLayer.appendChild(progressLayer);
       tooltipLayer.appendChild(tooltipTextLayer);
       tooltipLayer.appendChild(bulletsLayer);
