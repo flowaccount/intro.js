@@ -1,12 +1,16 @@
 {
-  "name": "intro.js",
+  "name": "@flowaccount/intro.js",
   "description": "Better introductions for websites and features with a step-by-step guide for your projects",
-  "version": "2.9.3",
+  "version": "2.9.7",
   "author": "Afshin Mehrabani <afshin.meh@gmail.com>",
   "homepage": "http://introjs.com",
   "repository": {
     "type": "git",
-    "url": "https://github.com/usablica/intro.js"
+    "url": "ssh://git@github.com/flowaccount/intro.js.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/",
+    "access": "private"
   },
   "scripts": {
     "test": "npm run test:jshint",
